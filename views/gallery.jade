@@ -1,0 +1,19 @@
+//
+   Created by Limon on 02.01.14.
+extends ./layout.jade
+block content
+    .container
+        h2= title
+        br
+        form#add.form-horizontal(role='form')
+            .form-group
+                label.col-sm-2.control-label(for='name') Название
+                .col-sm-10
+                    input.form-control#name(type='text', placeholder='Название альбома', name='name', required=true)
+            .form-group
+                label.col-sm-2.control-label(for='description') Описание
+                .col-sm-10
+                    textarea.form-control#description(rows=4, placeholder='Описание альбома', name='description')
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button.btn.btn-primary(type='submit') Создать

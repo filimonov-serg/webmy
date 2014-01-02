@@ -1,7 +1,7 @@
 //
    Created by Limon on 01.01.14.
-doctype html
-head
-    title Hello
-body
-    h1 Hello
+extends ./layout.jade
+
+block content
+    .container
+        h2 Hello #{user ? user.username : "Anonim"}

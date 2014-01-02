@@ -1,0 +1,19 @@
+//
+   Created by Limon on 02.01.14.
+doctype html
+head
+    meta(charset='utf-8')
+    title= title ? title : "My app"
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href="/public/css/bootstrap.min.css")
+    link(rel='stylesheet', href="/public/css/bootstrap-theme.min.css")
+    link(rel='stylesheet', href="/public/css/main.css")
+body
+    #wrap
+        include ./includes/menu.jade
+        block content
+    include ./includes/footer.jade
+
+    script(src='/public/js/jquery-2.0.3.min.js')
+    script(src='/public/js/bootstrap.min.js')
+    script(src='/public/js/main.js')

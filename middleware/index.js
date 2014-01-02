@@ -21,6 +21,7 @@ module.exports = function(app, express) {
     app.set('view engine', 'jade');
 
     app.use(express.favicon('public/images/favicon.ico'));
+    //app.set('env', 'production');
 
     if(app.get('env') == 'development') {
         app.use(express.logger('dev'));
@@ -37,7 +38,7 @@ module.exports = function(app, express) {
         cooike: config.get('session:cookie'),
         store: new MongoStore({mongoose_connection: mongoose.connection})
     }));
-
+    app.use(require('./loadUser'));
     /**
      * Authorization Access
      */
@@ -47,7 +48,7 @@ module.exports = function(app, express) {
      * Routing
      */
     app.use(app.router);
-    //router(app);
+    router(app);
 
 
     app.use(express.static(path.join(__dirname, '../public')));

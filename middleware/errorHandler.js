@@ -6,7 +6,8 @@ var config = require('../config');
 var sendHttpError = function(error, res) {
     res.status(error.status);
 
-    if(req.xhr) {
+    if(res.req.headers['x-requested-with'] == 'XMLHttpRequest') {
+        //res.error = error;
         res.json(error);
     } else {
         res.render('error', {

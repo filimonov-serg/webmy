@@ -1,0 +1,22 @@
+//
+   Created by Limon on 02.01.14.
+extends ./layout.jade
+
+block content
+    .container
+        .login-form
+            #error.alert.alert-danger.hidden
+                span
+
+            form.form-horizontal#login(action='/login', role='form', method='POST')
+                .form-group
+                    label.col-sm-2.control-label(for='username') Логин
+                    .col-sm-10
+                        input.form-control#username(type='text',placeholder='Имя пользователя',name='username',required=true)
+                .form-group
+                    label.col-sm-2.control-label(for='password') Пароль
+                    .col-sm-10
+                        input.form-control#password(type='password',placeholder='Пароль',required=true,name='password')
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                        button.btn.btn-primary#sendform(type='submit') Войти

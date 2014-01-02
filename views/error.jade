@@ -1,9 +1,9 @@
 //
    Created by Limon on 01.01.14.
-doctype html
-head
-    title Ошибка
-body
-    h2 Ошибка
-    p= error.status
+extends ./layout.jade
 
+block content
+    .container
+        .alert.alert-danger
+            h2 Ошибка (#{error.status})
+            p= error.message
